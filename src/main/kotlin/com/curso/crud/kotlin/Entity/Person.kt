@@ -7,15 +7,15 @@ import javax.validation.constraints.Email
 data class Person(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id:Long,
-    val name:String,
-    val surName: String,
-    val job:String,
+    var id:Long?,
+    var name:String?,
+    var surName: String?,
+    var job:String,
     @Email
-    val email: String,
-    val age:Int,
+    var email: String,
+    var age:Int,
     @Lob
-    val avatar: Byte,
+    var avatar: Byte?,
     @OneToMany(mappedBy = "person", fetch = FetchType.LAZY, orphanRemoval = true)
-    val pets: List<Pet>
+    var pets: List<Pet>
 )

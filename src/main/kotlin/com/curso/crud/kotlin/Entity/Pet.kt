@@ -7,14 +7,13 @@ import javax.persistence.*
 data class Pet (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long?,
-    var name: String?,
-    var age: Int?,
-    var type: String?,
+    val id: Long?,
+    val name: String?,
+    val age: Int?,
+    val type: String?,
     @Lob
-    var photo: Byte?,
-    @JsonIgnore
+    val photo: Byte?,
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_person")
-    var person: Person
+    val person: Person?
 )
